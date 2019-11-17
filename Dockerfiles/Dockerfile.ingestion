@@ -1,0 +1,7 @@
+FROM python:3.5
+
+ADD ingest_raw_data.py Pipfile /
+
+RUN pip3 install pipenv
+RUN pip3 install --no-cache-dir -U crcmod
+RUN pipenv --python $(which python) install
